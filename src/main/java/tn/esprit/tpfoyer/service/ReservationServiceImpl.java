@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class ReservationServiceImpl implements IReservationService {
-
+//ok
     ReservationRepository reservationRepository;
 
     public List<Reservation> retrieveAllReservations() {

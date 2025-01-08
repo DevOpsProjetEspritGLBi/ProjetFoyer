@@ -106,7 +106,7 @@
         <repository>
             <id>deploymentRepo</id>
             <name>Nexus Repository</name>
-            <url>http://localhost:8081/repository/foyer/</url>
+            <url>http://192.168.56.100:8081/repository/foyer/</url>
         </repository>
     </distributionManagement>
 </project>

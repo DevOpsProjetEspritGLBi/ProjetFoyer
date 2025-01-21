@@ -2,7 +2,7 @@ version: "2.32.1"
 
 services:
   mysqldb:
-    image: mysql
+    image: mysql:5.7
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root

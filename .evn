@@ -1,6 +1,6 @@
 # MySQL Configuration
 MYSQLDB_ROOT_PASSWORD=root  # Utilisez seulement MYSQL_ROOT_PASSWORD ici
-MYSQLDB_DATABASE=projet_foyer
+MYSQLDB_DATABASE=foyer-tp
 MYSQL_USER=root
 # MySQL Ports
 MYSQLDB_LOCAL_PORT=3307

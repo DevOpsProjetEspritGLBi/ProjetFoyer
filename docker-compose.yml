@@ -23,7 +23,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: nourbayoudh/tpfoyer:0.1
+    image: sayfjridi/projetdevops:0.1
     restart: on-failure
     env_file: ./.env
     ports:

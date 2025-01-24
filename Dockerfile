@@ -1,11 +1,14 @@
-# Étape 1 : Utiliser l'image complète d'OpenJDK 17
+# Utiliser l'image complète d'OpenJDK 17
 FROM openjdk:17
 
-# Étape 2 : Exposer le port sur lequel l'application Spring Boot s'exécute
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Exposer le port utilisé par l'application
 EXPOSE 8082
 
-# Étape 3 : Ajouter le fichier JAR généré dans l'image Docker
-ADD target/tpFoyer-17-0.0.1-SNAPSHOT.jar tpFoyer-17-0.0.1-SNAPSHOT.jar
+# Copier le fichier JAR dans l'image Docker
+COPY target/tpFoyer-17-0.0.1-SNAPSHOT.jar app.jar
 
-# Étape 4 : Définir le point d'entrée du conteneur pour exécuter l'application
-ENTRYPOINT ["java", "-jar", "/tpFoyer-17-0.0.1-SNAPSHOT.jar"]
+# Exécuter l'application
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]

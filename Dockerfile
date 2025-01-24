@@ -1,26 +1,11 @@
-# Étape 1 : Utiliser une image Maven pour la phase de build
-FROM maven:3.8.5-openjdk-17 AS build
+# Utiliser l'image Java 17 Alpine officielle
+FROM openjdk:17-alpine
 
-# Définir le répertoire de travail dans le conteneur
-WORKDIR /app
+# Copier le fichier JAR de l'application dans le conteneur
+ADD /target/foyer.jar foyer.jar
 
-# Copier les fichiers source dans le conteneur
-COPY . .
-
-# Construire le projet avec Maven (sans les tests pour accélérer le build)
-RUN mvn clean package -DskipTests
-
-# Étape 2 : Utiliser une image minimale pour exécuter l'application
-FROM openjdk:17-jdk-slim
-
-# Définir le répertoire de travail pour l'application
-WORKDIR /app
-
-# Copier uniquement le fichier JAR construit depuis l'étape précédente
-COPY --from=build /app/target/*.jar app.jar
-
-# Exposer le port sur lequel l'application tourne (par exemple : 8080)
-EXPOSE 8080
+# Exposer le port sur lequel l'application écoute (ex: 8089)
+EXPOSE 8089
 
 # Commande pour exécuter l'application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "foyer.jar"]

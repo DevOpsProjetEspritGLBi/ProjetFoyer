@@ -103,10 +103,10 @@
     </plugins>
     </build>
     <distributionManagement>
-        <repository>
-            <id>deploymentRepo</id>
-            <name>Nexus Repository</name>
-            <url>http://192.168.56.100:8081/repository/foyer/</url>
-        </repository>
-    </distributionManagement>
+    <repository>
+        <id>deploymentRepo</id>
+        <name>Nexus Repository</name>
+        <url>http://192.168.56.100:8081/repository/foyer/</url>
+    </repository>
+</distributionManagement>
 </project>
